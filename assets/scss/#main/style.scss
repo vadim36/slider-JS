@@ -1,0 +1,104 @@
+@import "../scss/base/reset/reset.css";
+
+$sliderWidth: 55vw;
+$sliderHeight: $sliderWidth / 1.5;
+
+$mainFontFamily: sans-serif;
+
+$controlButtonsWidth: 13vw;
+
+$controlButtonsFontSize: 2rem;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  font-family: $mainFontFamily;
+
+  .slider {
+    width: $sliderWidth;
+    height: $sliderHeight;
+
+    margin: 25px auto;
+
+    border: 5px solid #000;
+
+    box-shadow: 0 5px 31px rgb(146, 146, 146);
+
+    @media (max-width: 1450px) {
+      width: $sliderWidth * 1.2;
+      height: $sliderHeight * 1.2;
+    }
+    
+    @media (max-width: 1000px) {
+      width: $sliderWidth * 1.4;
+      height: $sliderHeight * 1.4;
+    }
+
+    @media (max-width: 500px) {
+      width: $sliderWidth * 1.7;
+      height: $sliderHeight * 1.7;
+    }
+
+    .slider__slide {
+      width: 100%;
+      height: 100%;
+
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+
+  .controls{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    .controls__button{
+      width: $controlButtonsWidth;
+      min-height: auto;
+
+      font-size: $controlButtonsFontSize;
+
+      background: inherit;
+
+      border: 1.5px solid #000;
+      border-radius: 10px;
+
+      cursor: pointer;
+      position: relative;
+
+      padding: 10px;
+      
+      @media (max-width: 1350px) {
+        width:  $controlButtonsWidth * 1.35;
+      }
+      
+      @media (max-width: 900px) {
+        font-size: $controlButtonsFontSize / 1.2;
+      }
+
+      @media (max-width: 800px) {
+        width: $controlButtonsWidth * 1.65;
+      }
+      
+      @media (max-width: 500px) {
+        padding: 15px 0;
+      }
+
+      &:active{
+        top: 2px;
+      }
+
+      & + .controls__button {
+        margin-left: 20px;
+      }
+    }
+  }
+}
